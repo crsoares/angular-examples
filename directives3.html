@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf8" />
+		<script src="angular.js"></script>
+		<script src="app3.js"></script>
+		<style>
+			.expander {
+				border: 1px solid black;
+				width: 250px;
+			}
+
+			.expander > .title {
+				background-color: black;
+				color: white;
+				padding: .1em .3em;
+				cursor: pointer;
+			}
+
+			.expander > .body {
+				padding: .1em .3em;
+			}
+
+			.closed {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="SomeController">
+			<accordion>
+				<expander class="expander" ng-repeat="expander in expanders" expander-title="expander.title">
+					{{expander.text}}
+				</expander>
+			</accordion>
+		</div>
+	</body>
+</html>
